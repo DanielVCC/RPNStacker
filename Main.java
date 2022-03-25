@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 import java.util.Stack;
 
 public class Main {
@@ -22,7 +23,9 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		String path = "C:\\sources\\Calc1.stk";
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter file path: ");
+		String path = scan.nextLine();
 		Stack<Double> stack = new Stack<Double>();
 
 		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
@@ -40,6 +43,7 @@ public class Main {
 		} catch (IOException e) {
 			System.out.println("Error: " + e.getMessage());
 		}
+		scan.close();
 
 	}
 
