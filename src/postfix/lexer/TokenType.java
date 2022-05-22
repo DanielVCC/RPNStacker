@@ -14,22 +14,21 @@
  *     http://www.cin.ufpe.br/~hemr/
  * ******************************************************************/
 
+package postfix.lexer;
 
 /**
  * @author Henrique Rebelo
  */
-public class Token {
+public enum TokenType {
 
-	public final TokenType type; // token type
-	public final String lexeme; // token value
+	// Literals.
+	NUM,
 
-	public Token (TokenType type, String value) {
-		this.type = type;
-		this.lexeme = value;
-	}
+	// Single-character tokens for operations.
+	MINUS, PLUS, SLASH, STAR,
+	
+	ID,
+	
+	EOF
 
-	@Override
-	public String toString() {
-		return "Token [type=" + this.type + ", lexeme=" + this.lexeme + "]";
-	}
 }
